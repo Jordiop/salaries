@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap");
+
+@import "tailwindcss";
+
+:root {
+    --bg: #0c0c0f;
+    --surface: #141418;
+    --surface2: #1c1c22;
+    --border: #2a2a35;
+    --accent: #e8ff47;
+    --accent2: #ff6b35;
+    --text: #f0f0f5;
+    --muted: #6b6b80;
+    --p10: #ff4444;
+    --p25: #ff8c42;
+    --p50: #ffd166;
+    --p75: #06d6a0;
+    --p90: #118ab2;
+}
+
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "DM Sans", sans-serif;
+    min-height: 100vh;
+    background-image:
+        radial-gradient(
+            ellipse at 20% 0%,
+            rgba(232, 255, 71, 0.06) 0%,
+            transparent 50%
+        ),
+        radial-gradient(
+            ellipse at 80% 100%,
+            rgba(255, 107, 53, 0.05) 0%,
+            transparent 50%
+        );
+}
+
+/* ── Typography ─────────────────────────────────── */
+.font-bebas {
+    font-family: "Bebas Neue", sans-serif;
+}
+.font-mono-dm {
+    font-family: "DM Mono", monospace;
+}
+
+/* ── Card ───────────────────────────────────────── */
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+/* ── Select ─────────────────────────────────────── */
+select {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    font-family: "DM Sans", sans-serif;
+    font-size: 15px;
+    padding: 10px 14px;
+    outline: none;
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+    cursor: pointer;
+    width: 100%;
+}
+select:focus {
+    border-color: var(--accent);
+}
+select option {
+    background: #1c1c22;
+}
+
+/* ── Salary input ───────────────────────────────── */
+input[type="number"] {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    font-family: "DM Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 12px 14px 12px 32px;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.2s;
+    height: 54px;
+}
+input[type="number"]:focus {
+    border-color: var(--accent);
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+/* ── Bar rows ───────────────────────────────────── */
+.bar-row {
+    display: grid;
+    grid-template-columns: 90px 1fr 82px;
+    align-items: center;
+    gap: 10px;
+}
+.bar-label {
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    color: var(--muted);
+    text-align: right;
+    white-space: nowrap;
+}
+.bar-track {
+    height: 26px;
+    background: var(--surface2);
+    border-radius: 4px;
+    overflow: hidden;
+}
+.bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.bar-value {
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    color: var(--text);
+    text-align: right;
+    white-space: nowrap;
+}
+.bar-row.you-row .bar-track {
+    border: 1.5px solid var(--accent);
+}
+.bar-row.you-row .bar-fill {
+    background: var(--accent) !important;
+}
+.bar-row.you-row .bar-label {
+    color: var(--accent);
+    font-weight: 500;
+}
+.bar-row.you-row .bar-value {
+    color: var(--accent);
+}
+
+/* ── Region pill ────────────────────────────────── */
+.region-pill {
+    font-family: "DM Mono", monospace;
+    font-size: 10px;
+    background: rgba(232, 255, 71, 0.1);
+    border: 1px solid rgba(232, 255, 71, 0.3);
+    border-radius: 20px;
+    padding: 4px 12px;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+/* ── Highcharts overrides ───────────────────────── */
+.highcharts-background {
+    fill: transparent !important;
+}
+.highcharts-plot-background {
+    fill: transparent !important;
+}
